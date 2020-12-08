@@ -4,6 +4,7 @@ r = 0.04
 current_savings = 0
 months = 0
 
+
 # variables the user will give a value to
 total_cost = float(input('What is the cost of your home? '))
 annual_salary = float(input('What is your anual salary? '))
@@ -30,8 +31,9 @@ while current_savings < down_payment:
     current_savings += (portion_saved * monthly_salary) + (current_savings * monthly_r)
     # increase by one month until loop condition is met:
     months += 1
+    years_to_save = months/12
 
 # We are printing the amount of time it takes to save enough money for a down payment
-print(f'it will take {months} months to save your down payment of {down_payment}$.')
+print(f'it will take {years_to_save} years to save your down payment of {down_payment}$.')
 
 
