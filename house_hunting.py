@@ -8,6 +8,7 @@ month = 0
 total_cost = float(input('What is the cost of your home? '))
 annual_salary = float(input('What is your anual salary? '))
 portion_saved = float(input('How much money will you save each month? Please enter the amount in decimal form as a percentage of your monthly salary (ex: 0.1 for 10%) '))
+print(type(portion_down_payment))
 
 # variables to convert yearly values to monthly values
 monthy_r = r/12
@@ -21,6 +22,16 @@ down_payment = total_cost * portion_down_payment
 # while n > 0:
 # ...     n -= 1
 # ...     print(n)
-while current_savings <= down_payment:
+while current_savings < down_payment:
+
+    # At the end of each month, your savings will be increased by the return on your investment, plus a percentage of your monthly salary ​(monthly_r).
+    # In Python, While Loops is used to execute a block of statements repeatedly until a given condition is satisfied. And when the condition becomes false, the line immediately after the loop in the program is executed. 
+    # formula to increase current savings:
+    current_savings += (portion_saved*monthly_salary) + (current_savings*monthly_r)
+    # increase by one month until loop condition is met:
+    months += 1
+
+# We are printing the amount of time it takes to save enough money for a down payment
+print()
 
 
